@@ -1,0 +1,3 @@
+[submodule "otlob"]
+	path = otlob
+	url = https://github.com/ahmedhassan24/Database-Project/otlob.git
