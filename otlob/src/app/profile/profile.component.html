@@ -1,0 +1,32 @@
+<nz-card style="width:300px;" nzTitle="Personal Info" [nzExtra]="extraTemplate">
+  <p>Name : {{user.Firstname}} {{user.Lastname}} </p>
+  <p>Address: {{user.Address}}</p>
+</nz-card>
+<ng-template #extraTemplate>
+  <a (click) = "modalOpen()"> edit  </a>
+  <nz-avatar nzSize="large" nzIcon="user"></nz-avatar>
+</ng-template>
+
+<h1>Previous Orders</h1>
+<nz-table #basicTabl [nzData]="listOfData" [nzShowPagination]=false>
+    <thead>
+      <tr>
+        <th>Restaurant Name</th>
+        <th>Order ID</th>
+        <th>Address</th>
+        <th>Order Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of listOfData">
+        <td>{{data.Rname}} </td>
+        <td>{{data.OrderId}}</td>
+        <td>{{data.Address}}</td>
+        <td>{{data.Status}}</td>
+
+        <td>
+
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>

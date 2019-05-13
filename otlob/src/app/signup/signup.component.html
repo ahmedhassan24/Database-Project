@@ -1,0 +1,109 @@
+<div nz-row>
+  <div nz-col nzSpan="12">
+    <form nz-form [formGroup]="validateForm" (ngSubmit)="signup()">
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">E-mail</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <input nz-input formControlName="Email" id="Email" placeholder="Email" />
+          <nz-form-explain *ngIf="validateForm.get('Email')?.dirty && validateForm.get('email')?.errors">
+            The input is not valid E-mail!
+          </nz-form-explain>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Password" nzRequired>Password</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <input nz-input type="password" id="Password" formControlName="Password" placeholder="Password" />
+          <nz-form-explain *ngIf="validateForm.get('Password')?.dirty && validateForm.get('Password')?.errors">Please input your password!</nz-form-explain>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Firstname" nzRequired>First Name</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <input nz-input id="Firstname" formControlName="Firstname" placeholder="Firstname" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Lastname" nzRequired>Last Name</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <input nz-input id="Lastname" formControlName="Lastname" placeholder="Lastname" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="AcctType" nzRequired>Account Type</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <input nz-input id="AcctType" formControlName="AcctType" placeholder="AcctType" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Username" nzRequired>
+          <span>
+            Username
+            <i nz-icon nz-tooltip nzTitle="What do you want other to call you" type="question-circle" theme="outline"></i>
+          </span>
+        </nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <input nz-input id="Username" formControlName="Username" />
+          <nz-form-explain *ngIf="validateForm.get('Username')?.dirty && validateForm.get('Username')?.errors">Please input your Username!</nz-form-explain>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="PhoneNo" nzRequired>Phone Number</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24" [nzValidateStatus]="validateForm.controls['PhoneNo']">
+          <input formControlName="PhoneNo" id="'PhoneNo'" nz-input />
+
+          <nz-form-explain *ngIf="validateForm.get('PhoneNo')?.dirty && validateForm.get('PhoneNo')?.errors">Please input your phone number!</nz-form-explain>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Birthdate" nzRequired>Birthdate</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <input nz-input id="Birthdate" formControlName="Birthdate" placeholder="Birthdate" />
+          <nz-form-explain *ngIf="validateForm.get('Birthdate')?.dirty && validateForm.get('Birthdate')?.errors">Please input Birthdate!</nz-form-explain>
+        </nz-form-control>
+      </nz-form-item>
+      <!-- <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="captcha" nzRequired>Captcha</nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24">
+            <div nz-row [nzGutter]="8">
+              <div nz-col [nzSpan]="12">
+                <input nz-input formControlName="captcha" id="captcha" />
+              </div>
+              <div nz-col [nzSpan]="12">
+                <button nz-button (click)="getCaptcha($event)">Get captcha</button>
+              </div>
+            </div>
+            <nz-form-explain *ngIf="validateForm.get('captcha')?.dirty && validateForm.get('captcha')?.errors"
+              >Please input the captcha you got!</nz-form-explain
+            >
+            <nz-form-extra>We must make sure that your are a human.</nz-form-extra>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item nz-row style="margin-bottom:8px;">
+          <nz-form-control [nzSpan]="14" [nzOffset]="6">
+            <label nz-checkbox formControlName="agree">
+              <span>I have read the <a>agreement</a></span>
+            </label>
+          </nz-form-control>
+        </nz-form-item> -->
+
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Address" nzRequired>Address</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <input nz-input id="Address" formControlName="Address" placeholder="Address" />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item nz-row style="margin-bottom:8px;">
+        <nz-form-control [nzSpan]="14" [nzOffset]="6">
+          <button nz-button nzType="primary">Register</button>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item nz-row style="margin-bottom:8px;">
+        <nz-form-control [nzSpan]="14" [nzOffset]="6">
+          <button nz-button nzType="primary" routerLink="../login"> Login</button>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </div>
+</div>

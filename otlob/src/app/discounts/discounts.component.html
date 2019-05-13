@@ -1,0 +1,24 @@
+<nz-table #basicTable [nzData]="listOfData" [nzShowPagination]= false>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Promo</th>
+      <th>StartDate</th>
+      <th>EndDate</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td>{{ data.Rname }}</td>
+      <td>{{ data.Promo }}</td>
+      <td>{{ data.StartDate }}</td>
+      <td>{{ data.EndDate }}</td>
+      <td>
+        <a>Action 一 {{ data.name }}</a>
+        <nz-divider nzType="vertical"></nz-divider>
+        <a>Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

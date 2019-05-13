@@ -1,0 +1,44 @@
+<!-- NG-ZORRO -->
+<!-- <a href="https://github.com/NG-ZORRO/ng-zorro-antd" target="_blank" style="display: flex;align-items: center;justify-content: center;height: 100%;width: 100%;">
+  <img height="300" src="https://img.alicdn.com/tfs/TB1X.qJJgHqK1RjSZFgXXa7JXXa-89-131.svg">
+</a> -->
+
+
+
+<nz-layout class="layout">
+ <app-header></app-header>
+ 
+ 
+  <nz-sider  [nzWidth]="200" style="background:#fff; padding-top: 64px;">
+    <ul nz-menu [nzMode]="'inline'" style="height:100%">
+      <li nz-submenu [nzOpen]="true">
+        <span title></span>
+        <ul>
+          <!-- <a [routerLink]="['/admin/users']"><li nz-menu-item>All users</li></a>
+          <a [routerLink]="['/admin/questions']"><li nz-menu-item>Add questions</li></a>
+          <a><li nz-menu-item><app-email></app-email></li></a>
+          <a><li nz-menu-item><app-invite-mentor></app-invite-mentor></li></a> -->
+          <a *ngIf="showSideAdmin"><li nz-menu-item><app-invite-admin></app-invite-admin></li></a>
+          <a *ngIf="showSideAdmin"><li nz-menu-item><app-add-rest></app-add-rest></li></a>
+          <a *ngIf="showSideAdmin"><li nz-menu-item><app-invite-staff></app-invite-staff></li></a>
+          <a *ngIf="showSideAdmin" [routerLink]="['/view-admin']"><li nz-menu-item>Admins list</li></a>
+          <a *ngIf="showSideAdmin" [routerLink]="['/logs']"><li nz-menu-item>Logs</li></a>
+          <a [routerLink]="['/restaurants']"><li nz-menu-item>Restaurants</li></a>
+          <a [routerLink]="['/change-pass']"><li nz-menu-item>Change Password</li></a>
+        </ul>
+      </li>
+    </ul>
+  </nz-sider>
+
+
+  <nz-content style="padding-top: 65px;">
+      <nz-layout style="padding:24px 0; background: #fff">
+   
+
+        <nz-content style="padding: 0 24px; min-height: 750px; display: flex; flex-direction: column;">
+          <router-outlet></router-outlet>
+        </nz-content>
+      </nz-layout>
+     
+    </nz-content>
+</nz-layout>

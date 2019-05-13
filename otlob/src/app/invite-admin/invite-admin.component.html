@@ -1,0 +1,32 @@
+<a (click)="modalOpen()">Invite Admin</a>
+<nz-modal [(nzVisible)]="active" nzTitle="Invite Admin" (nzOnCancel)="active = false" (nzOnOk)="invite()">
+  <form nz-form [formGroup]="inviteMentorForm" >
+      <nz-form-item>
+          <nz-form-label [nzSpan]="6">first Name</nz-form-label>
+            <nz-form-control [nzSpan]="14">
+              <input nz-input formControlName="first" id="first">
+            </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSpan]="6">Last Name</nz-form-label>
+          <nz-form-control [nzSpan]="14">
+            <input nz-input formControlName="last" id="last">
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSpan]="6">E-mail</nz-form-label>
+          <nz-form-control [nzSpan]="14">
+            <input nz-input formControlName="email" type="email" id="email">
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSpan]="6">Username</nz-form-label>
+          <nz-form-control [nzSpan]="14">
+            <input nz-input formControlName="userName" id="userName">
+          </nz-form-control>
+        </nz-form-item>
+    
+  </form>
+ 
+ 
+</nz-modal>

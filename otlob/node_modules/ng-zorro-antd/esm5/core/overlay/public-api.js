@@ -1,0 +1,8 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+export { NzConnectedOverlayDirective } from './nz-connected-overlay';
+export { NzOverlayModule } from './nz-overlay.module';
+export { getPlacementName, POSITION_MAP, DEFAULT_TOOLTIP_POSITIONS, DEFAULT_DROPDOWN_POSITIONS, DEFAULT_SUBMENU_POSITIONS, DEFAULT_CASCADER_POSITIONS, DEFAULT_MENTION_POSITIONS } from './overlay-position';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL25nLXpvcnJvLWFudGQvY29yZS8iLCJzb3VyY2VzIjpbIm92ZXJsYXkvcHVibGljLWFwaS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7O0FBQUEsNENBQWMsd0JBQXdCLENBQUM7QUFDdkMsZ0NBQWMscUJBQXFCLENBQUM7QUFDcEMsd0xBQWMsb0JBQW9CLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgKiBmcm9tICcuL256LWNvbm5lY3RlZC1vdmVybGF5JztcbmV4cG9ydCAqIGZyb20gJy4vbnotb3ZlcmxheS5tb2R1bGUnO1xuZXhwb3J0ICogZnJvbSAnLi9vdmVybGF5LXBvc2l0aW9uJztcbiJdfQ==

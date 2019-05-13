@@ -1,0 +1,50 @@
+<nz-table #basicTabl [nzData]="listOfData" [nzShowPagination]=false>
+    <thead>
+      <tr>
+        <th>Restaurant Name</th>
+        <th>Order ID</th>
+        <th>Address</th>
+        <th>Order Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of listOfData">
+        <td>{{data.Rname}} </td>
+        <td>{{data.OrderId}}</td>
+        <td>{{data.Address}}</td>
+        <td>{{data.Status}}</td>
+        <td>
+            <a (click)="modalOpen(data.Rname)">Modify</a>
+            <nz-divider nzType="vertical"></nz-divider>
+            <a (click)="delete(data.OrderId)">Delete</a>
+          </td>
+
+        <td>
+
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+
+
+  <nz-modal [(nzVisible)]="active" nzTitle="Modify order status" (nzOnCancel)="active = false" (nzOnOk)="modify()">
+      <form nz-form [formGroup]="restaurantForm">
+        <nz-form-item>
+          <nz-form-label [nzSpan]="6">Order ID</nz-form-label>
+            <nz-form-control   [nzSpan]="14">
+              <input nz-input [disabled]="true" formControlName="OrderId" id="OrderId">
+            </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSpan]="6">Status</nz-form-label>
+          <nz-form-control [nzSpan]="14">
+            <input nz-input formControlName="Status" id="Status">
+          </nz-form-control>
+        </nz-form-item>
+       
+    
+      </form>
+    
+    
+    </nz-modal>

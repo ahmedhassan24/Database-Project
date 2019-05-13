@@ -1,0 +1,35 @@
+<a (click)="modalOpen()">Add Restaurant</a>
+<nz-modal [(nzVisible)]="active" nzTitle="Add Restaurant" (nzOnCancel)="active = false" (nzOnOk)="invite()">
+  <form nz-form [formGroup]="inviteMentorForm">
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6">Restaurant Name</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <input nz-input formControlName="Rname" id="Rname">
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6">Hotline</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <input nz-input formControlName="Hotline" id="Hotline">
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6">Opens At</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <input nz-input formControlName="start_at" id="end_at">
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6">Closes At</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <input nz-input formControlName="end_at" id="end_at">
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6">Cuisine</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <input nz-input formControlName="cuisine" id="cuisine">
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+</nz-modal>

@@ -1,0 +1,18 @@
+<nz-header style="position:fixed; width:100%; z-index:3;">
+
+<ul nz-menu [nzTheme]="'dark'" [nzMode]="'horizontal'" style=" line-height: 64px;" >
+
+<li>
+<a *ngIf="signedIn" (click)="logout()" style=" float:right;">Logout</a>
+<a *ngIf="!signedIn" (click)="login()" style=" float:right;">Login</a>
+<a *ngIf="admin" [routerLink]="['/admin/dashboard']" style=" float:left;">Home</a>
+<a *ngIf="user" [routerLink]="['/user/profile']" style=" float:left;">Home</a>
+<a *ngIf="staff" [routerLink]="['/staff']" style=" float:left;">Home</a>
+</li>
+
+</ul>
+
+
+
+
+</nz-header>

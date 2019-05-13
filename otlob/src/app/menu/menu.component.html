@@ -1,0 +1,84 @@
+
+<nz-modal  [(nzVisible)]="active" nzTitle="View Order" (nzOnCancel)="active = false" (nzOnOk)="placeOrder()">
+
+    <nz-table #basicTabl [nzData]="listofItems" [nzShowPagination]=false>
+      <thead>
+        <tr>
+          <th>Item Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of listofItems">
+          <td>{{data.itemName}} </td>
+          <td>{{data.Price}}</td>
+          <td>
+            <a (click)="add(data.itemName)">+</a>{{data.Quantity}}
+            <a (click)="remove(data.itemName)">-</a>
+          </td>
+  
+          <td>
+  
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+    <form nz-form [formGroup]="inviteMentorForm">
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6">Comments</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+          <input nz-input formControlName="comment" id="comment">
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+    <form nz-form [formGroup]="inviteMentorForm">
+        <nz-form-item>
+          <nz-form-label [nzSpan]="6">Discount</nz-form-label>
+          <nz-form-control [nzSpan]="6">
+            <input nz-input formControlName="comment" id="comment">
+          </nz-form-control>
+        </nz-form-item>
+      </form>
+    <nz-table #basicTabl [nzData]="listofItems" [nzShowPagination]=false>
+        <thead>
+          <tr>
+            <th>Total Price</th>
+            <th>Discount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of listofItems">
+            <td>{{data.itemName}} </td>
+            <td>{{data.Price}}</td>
+    
+            <td>
+    
+            </td>
+          </tr>
+        </tbody>
+      </nz-table>
+  </nz-modal>
+<nz-table #basicTable [nzData]="listOfData" [nzShowPagination]=false>
+  <thead>
+    <tr>
+      <th>Item Name</th>
+      <th>Type</th>
+      <th>Price</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td>{{ data.ItemName }}</td>
+      <td>{{ data.Type }}</td>
+      <td>{{ data.Price }}</td>
+      <td>
+        <a *ngIf="admin" (click)="Modify(data.MenuId)">Modify menu--/</a>
+        <a (click)="addItem(data)">--add</a>
+
+      </td>
+    </tr>
+  </tbody>
+</nz-table>
+<button (click)="modalOpen()" nz-button nzType="primary" nzBlock>View Order</button>

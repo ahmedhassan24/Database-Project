@@ -1,0 +1,59 @@
+<h1>
+  Restaurants</h1>
+<nz-table #basicTable [nzData]="listOfData" [nzShowPagination]=f alse>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Hotline</th>
+      <th>Start at</th>
+      <th>Close at</th>
+      <th>Cusine</th>
+      <th *ngIf="admin">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td [routerLink]="['/menu/:id']" [queryParams]="{ id: data.RestId}">{{ data.Rname }}</td>
+
+
+      <td>{{ data.Hotline }}</td>
+      <td>{{ data.start_at }}</td>
+      <td>{{ data.end_at }}</td>
+      <td>{{ data.Cuisine }}</td>
+      <td>
+        <a *ngIf="admin" (click)="modalOpen(data.Rname)">Modify</a>
+        <nz-divider *ngIf="admin" nzType="vertical"></nz-divider>
+        <a *ngIf="admin" (click)="delete(data.Rname)">Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>
+<nz-modal [(nzVisible)]="active" nzTitle="Invite Mentor" (nzOnCancel)="active = false" (nzOnOk)="Modify()">
+  <form nz-form [formGroup]="restaurantForm">
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6">Hotline</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <input nz-input formControlName="hotline" id="hotline">
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6">Start at</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <input nz-input formControlName="Start_at" id="Start_at">
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6">Close at</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <input nz-input formControlName="End_at" id="End_at">
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6">Cuisine</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <input nz-input formControlName="Cuisine" id="Cuisine">
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+
+</nz-modal>

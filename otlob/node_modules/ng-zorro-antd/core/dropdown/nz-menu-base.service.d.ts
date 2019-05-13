@@ -1,0 +1,18 @@
+import { BehaviorSubject, Subject } from 'rxjs';
+import { NzDirectionVHIType } from '../types';
+export declare class NzMenuBaseService {
+    isInDropDown: boolean;
+    menuItemClick$: Subject<any>;
+    theme$: Subject<{}>;
+    mode$: BehaviorSubject<NzDirectionVHIType>;
+    inlineIndent$: BehaviorSubject<number>;
+    check$: import("rxjs").Observable<number | {} | "vertical" | "horizontal" | "inline">;
+    theme: 'light' | 'dark';
+    mode: NzDirectionVHIType;
+    inlineIndent: number;
+    menuOpen$: BehaviorSubject<boolean>;
+    onMenuItemClick(menu: any): void;
+    setMode(mode: NzDirectionVHIType): void;
+    setTheme(theme: 'light' | 'dark'): void;
+    setInlineIndent(indent: number): void;
+}

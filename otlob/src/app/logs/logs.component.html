@@ -1,0 +1,19 @@
+<h1>
+    Restaurants</h1>
+  <nz-table #basicTable [nzData]="listOfData" [nzShowPagination]=f alse>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Action</th>
+        <th>User Affected</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of basicTable.data">
+        <!-- <td [routerLink]="['/menu/:id']" [queryParams]="{ id: data.RestId}">{{ data.Rname }}</td> -->
+        <td>{{ data.userChanged }}</td>
+        <td>{{ data.action }}</td>
+        <td>{{ data.userAffected }}</td>
+      </tr>
+    </tbody>
+  </nz-table>

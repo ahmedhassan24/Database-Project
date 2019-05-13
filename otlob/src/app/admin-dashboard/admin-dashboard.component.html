@@ -1,0 +1,29 @@
+<h1>Staff List </h1>
+<nz-table #basicTable [nzData]="listOfData" [nzShowPagination]=false style="padding-bottom: 20px">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Birthdate</th>
+      <th>Phone No.</th>
+      <th>Address</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td>{{ data.Firstname }}</td>
+      <td>{{ data.Lastname }}</td>
+      <td>{{ data.Email }}</td>
+      <td>{{ data.Birthdate }}</td>
+      <td>{{ data.PhoneNo }}</td>
+      <td>{{ data.Address }}</td>
+      <td>
+        <a (click)="changePass(data.Username)" >change Password </a>
+          <nz-divider nzType="vertical"></nz-divider>
+          <a (click)="delete(data.UserId)"> Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>
